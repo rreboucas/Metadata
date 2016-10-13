@@ -1,0 +1,3 @@
+<aura:component access="global">
+	Welcome
+</aura:component>

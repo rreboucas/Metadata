@@ -1,0 +1,37 @@
+<aura:component access="global">
+	<ltng:require styles="/resource/SLDS0103/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    
+    
+    <div class="slds">
+        
+        <div class="slds-wizard" role="navigation">
+            <ol class="slds-wizard__list">
+              <li class="slds-wizard__item slds-is-active">
+                <a href="#void" class="slds-wizard__link">
+                  <span class="slds-wizard__marker"></span>
+                  <span class="slds-wizard__label slds-text-heading--label slds-truncate">Start</span>
+                </a>
+              </li>
+              <li class="slds-wizard__item slds-is-active">
+                <a href="#void" class="slds-wizard__link">
+                  <span class="slds-wizard__marker"></span>
+                  <span class="slds-wizard__label slds-text-heading--label slds-truncate">Scan</span>
+                </a>
+              </li>
+              <li class="slds-wizard__item slds-is-active">
+                <a href="#void" class="slds-wizard__link">
+                  <span class="slds-wizard__marker"></span>
+                  <span class="slds-wizard__label slds-text-heading--label slds-truncate">Review Warnings</span>
+                </a>
+              </li>
+              
+            </ol>
+            <span class="slds-wizard__progress">
+              <span class="slds-wizard__progress-bar" style="width:50%;"></span>
+            </span>
+          </div>
+        
+    </div>
+    
+    
+</aura:component>
