@@ -11,10 +11,18 @@
             // This callback doesn’t reference cmp. If it did,
             // you should run an isValid() check
             //if (cmp.isValid() && state === "SUCCESS") {
+            
+            // Hide Spinner here
+            
             if (state === "SUCCESS") {
                 // Alert the user with the value returned 
                 // from the server
-                alert("From server: " + response.getReturnValue());
+                cmp.set("v.lstRecords", response.getReturnValue());
+                
+                var lstRecs = cmp.get("v.lstRecords");
+                console.log("InspectorSPA_Helper: lstRecs: " + lstRecs); 
+                
+                
 
                 // You would typically fire a event here to trigger 
                 // client-side notification that the server-side 
