@@ -22,7 +22,7 @@
                 var lstRecs = cmp.get("v.lstRecords");
                 console.log("InspectorSPA_Helper: lstRecs: " + lstRecs); 
                 
-                
+                this.hideSpinner(cmp);
 
                 // You would typically fire a event here to trigger 
                 // client-side notification that the server-side 
@@ -53,5 +53,23 @@
         // other server-side action calls.
         // $A.enqueueAction adds the server-side action to the queue.
         $A.enqueueAction(action);
+    },
+
+    showSpinner : function (component) {
+        console.log("InspectorSPAHelper.showSpinner: entered");
+        
+        var spinner = component.find('xi-spinner');
+        $A.util.removeClass(spinner, "xc-hidden"); 
+        
+        console.log("InspectorSPAHelper.showSpinner: exit");   
+    },
+    
+    hideSpinner : function (component) {
+       console.log("InspectorSPAHelper.hideSpinner: entered");
+       
+       var spinner = component.find('xi-spinner');
+       $A.util.addClass(spinner, "xc-hidden"); 
+       
+       console.log("InspectorSPAHelper.hideSpinner: exit");  
     }
 })

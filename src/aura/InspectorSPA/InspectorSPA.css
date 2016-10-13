@@ -1,3 +1,7 @@
 .THIS .toggle {
    display: none;
 }
+
+.THIS .xc-hidden {
+   display:none !important;
+ }

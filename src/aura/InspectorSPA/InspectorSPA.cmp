@@ -1,69 +1,57 @@
 <aura:component controller="InspectorServerSideController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes">
     <aura:attribute name="messages" type="Aura.Component[]" access="GLOBAL"/>
     <aura:attribute name="lstRecords" type="Partner_Warning__c[]" access="global"/>
-    <ltng:require styles="/resource/SLDS0103/assets/styles/salesforce-lightning-design-system-ltng.css" />
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
-    <div class="slds">
-        
+ 
+    
+    <div class="slds  slds-is-relative">
         <div class="slds-container--small">
-        <div class="slds-grid slds-wrap slds-grid--pull-padded">
-    		<div class="slds-col--padded slds-size--1-of-1">
-            	<p class="slds-page-header__title slds-truncate slds-align-middle" title="Technical Advisor">Technical Advisor</p>
-            </div>
-            <div class="slds-col--padded slds-size--1-of-1">
-            	<div aura:id="messages">
-                    {!v.messages}
+            <div aura:id="xi-spinner" class="xc-hidden" style="padding-top: 4px;">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--medium" aria-hidden="false" role="alert">
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>  
+            <div class="slds-grid slds-wrap slds-grid--pull-padded">
+        		<div class="slds-col--padded slds-size--1-of-1">
+                	<p class="slds-page-header__title slds-truncate slds-align-middle" title="Technical Advisor">Technical Advisor</p>
+                </div>
+                <div class="slds-col--padded slds-size--1-of-1">
+                	<div aura:id="messages">
+                        {!v.messages}
+                    </div>
+                </div>
+                <div class="slds-col--padded slds-size--1-of-1" style="height:400px">
+                
+                    <!-- Welcome LC: Start - git 3     change -->
+                    
+                    <div aura:id="welcome">
+                    	<c:InspectorWelcome />
+            		</div>
+                    
+                    <!-- Welcome LC: End -->
+                    
+                    <!-- Spinner LC: Start -->
+                    
+                    <div aura:id="scanResults">
+                      <c:InspectorScanResults />
+                    </div>
+                    
+                    <!-- Spinner LC: End -->
+                    
+                
+                </div>
+                <div class="slds-col--padded slds-size--1-of-1">
+                    <button type="button" class="slds-button slds-button--neutral slds-not-selected" aura:id="scanBtn" onclick="{!c.StartScan}">Start Scan</button>
+                </div>
+                <div class="slds-col--padded slds-size--1-of-1">
+                	<div aura:id="timeline">
+                      <c:InspectorTimeline />
+                    </div>
                 </div>
             </div>
-            <div class="slds-col--padded slds-size--1-of-1" style="height:400px">
-            
-                <!-- Welcome LC: Start - git 3     change -->
-                
-                <div aura:id="welcome">
-                	<c:InspectorWelcome />
-        		</div>
-                
-                <!-- Welcome LC: End -->
-                
-                <!-- Spinner LC: Start -->
-                
-                <div aura:id="scanResults">
-                  <c:InspectorScanResults />
-                </div>
-                
-                <!-- Spinner LC: End -->
-                
-                <div aura:id="spinner">
-                  <c:Spinner />
-                </div>
-                
 
-            
-            </div>
-            <div class="slds-col--padded slds-size--1-of-1">
-                <button type="button" class="slds-button slds-button--neutral slds-not-selected" aura:id="scanBtn" onclick="{!c.StartScan}">Start Scan</button>
-            </div>
-            <div class="slds-col--padded slds-size--1-of-1">
-            	<div aura:id="timeline">
-                  <c:InspectorTimeline />
-                </div>
-            </div>
-        </div>
-        
-        
-        
-    
-        
-    
-        
-    
-
-    
-            
-    
-
-    
        </div>
     </div>
 
