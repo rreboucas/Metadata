@@ -17,7 +17,7 @@
             </div>
             <div class="slds-col--padded slds-size--1-of-1" style="height:400px">
             
-                <!-- Welcome LC: Start -->
+                <!-- Welcome LC: Start - gitdf     change -->
                 
                 <div aura:id="welcome">
                 	<c:InspectorWelcome />
